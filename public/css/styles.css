@@ -1,0 +1,191 @@
+body{
+    min-height: 100vh;
+    height: auto;
+}
+
+.on-hover-expand-card:hover{
+    transform: scale(1.05,1.05);
+}
+
+.on-hover-expand-card{
+    transition: all 300ms;
+}
+
+.imagotipo{
+    height: 5rem;
+    display: block;
+    margin: 0 auto;
+}
+
+.logout-button{
+    position: fixed;
+    right: 3rem;
+    bottom: 3rem;
+    width: 50px;
+    height: 50px;
+    font-size: 1.2rem;
+    text-align: center;
+    color: white;
+    background-color: #555;
+    border-radius: 0.5rem;
+    box-shadow: 1px 1px 10px black;
+    cursor: pointer;
+    transition: all 300ms;
+    text-decoration: none;
+}
+
+.logout-button:hover{
+    background-color: #333;
+    color: white;
+}
+
+.logout-button p{
+    font-size: 0.6rem;
+    margin: 0;
+    text-align: center;
+}
+
+@media (max-width: 980px){
+    .logout-button{
+        bottom: 1%;
+        right: 1%;
+    }
+}
+
+.img-login{
+    width: 75%;
+}
+
+.bg-login{
+    background: linear-gradient(0deg, rgba(34,121,195,1) 0%, rgba(86,45,253,1) 100%);
+}
+
+.bg-sm-login{
+    background-color: white;
+}
+
+.bg-light-joduma{
+    background: linear-gradient(0deg, rgba(34,195,174,1) 0%, rgba(45,122,253,1) 100%);
+    background-repeat: no-repeat;
+}
+
+.bg-dark-joduma{
+    background: linear-gradient(180deg, rgba(20,52,215,1) 30%, rgba(252,70,107,1) 100%);
+}
+
+.transition-300{
+    transition: all 1000ms;
+}
+
+.provider{
+    position: relative;
+}
+
+.provider-active{
+    background-color: rgba(0, 250, 0, 0.15);
+    transition: all 300ms;
+}
+
+.provider-inactive{
+    background-color: rgba(250, 0, 0, 0.15);
+    transition: all 300ms;
+}
+
+.btn-delete-container{
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.btn-edit{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+@media (max-width: 980px) {
+    .btn-edit{
+        width: 50%!important;
+        right: 25%;
+    }
+}
+
+.controls-providers{
+    position: fixed;
+    width: 15%;
+    left: 2%;
+    top: 10%
+}
+
+.controls-providers > div{
+    position: absolute;
+}
+
+.overlay{
+    display: inline-block;
+    opacity: 0;
+    transition: all 300ms;
+    transform: translateX(-5%);
+}
+
+.text-slide-right:hover ~ .overlay{
+    opacity: 1;
+    transform: translateX(0%);
+}
+
+@media (max-width: 980px){
+    #slogan{
+        display: none!important;
+    }
+    .bg-sm-login{
+        background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);
+    }
+}
+
+.products-container{
+    max-height: 65vh!important;
+}
+
+@media (max-width:980px) {
+    .product-page-container{
+        width: 100%!important;
+        margin-top: 0!important;
+    }
+}
+
+.personal-icon{
+    width: 500px;
+    height: 500px;
+}
+
+.empty-icon{
+    width: 5%;
+}
+
+@media (max-width:980px) {
+    .empty-icon{
+        width: 15%;
+    }
+}
+
+.table-container{
+    min-height: 75vh;
+    max-height: 75vh;
+}
+
+.modal-header{
+    display: block;
+    position: relative;
+}
+
+.modal-header button{
+    position: absolute;
+    right: 5%;
+    bottom: 40%;
+}
+
+@media (max-width: 460px){
+
+    .modal-header button{
+        right: 7%;
+    }
+}
