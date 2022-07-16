@@ -67,32 +67,6 @@
                     <input class="form-control" type="file" id="formFile" name="photo" accept="image/*">
                 </div>
 
-                <hr>
-
-                <div class="form-switch my-2">
-                    <input class="form-check-input py-2" type="checkbox" role="switch" id="wholesale" name="wholesale" value="5">
-                    <label class="form-check-label" for="wholesale">Venta a Mayoreo</label>
-                </div>
-                <div class="isChecked d-none" id="wholesale-price-show">
-                    <h6 class="text-center py-2 fw-bold text-white rounded-pill bg-dark fs-6">Datos de Mayoreo</h6>
-                    <div class="row">
-                        <div class="col-12 col-xl-6">
-                            <div class="input-group mb-3">
-                                <span class="input-group-text">$</span>
-                                <input type="text" class="form-control ps-4" id="wholesale_price" name="wholesale_price" placeholder="Precio de mayoreo" value="{{ $product->wholesale_price }}">
-                            </div>
-                        </div>
-                        <div class="col-12 col-xl-6">
-                            <div class="input-group mb-3">
-                                <input type="text" class="form-control ps-4" id="wholesale_quantity" name="wholesale_quantity" placeholder="A partir de..." value="{{ $product->wholesale_quantity }}">
-                                <span class="input-group-text">Pz.</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <hr>
-
                 <div class="form-group my-2">
                     <button class="btn btn-dark btn-sm">
                         Guardar
@@ -102,55 +76,4 @@
             </form>
         </section>
     </div>
-    @endsection
-    @section('script')
-    <script>
-        $(document).ready(() => {
-            const data = getDomObjects();
-
-            contentToggle(data);
-
-            $(data.wholesale).change(() => {
-                contentToggle(data);
-            });
-        });
-
-        const getDomObjects = () => {
-            const wholesale = $('#wholesale');
-            const content = $('#wholesale-price-show');
-            const wholesalePrice = $('#wholesale_price');
-            const wholesaleQuantity = $('#wholesale_quantity');
-
-            return {
-                wholesale,
-                content,
-                wholesalePrice,
-                wholesaleQuantity,
-            }
-        }
-
-        const contentToggle = data => {
-
-            const {
-                wholesale,
-                content,
-                wholesalePrice,
-                wholesaleQuantity
-            } = data;
-
-            if (wholesale.prop('checked')) {
-                content.removeClass('d-none');
-                wholesale.attr('value', '1');
-                wholesalePrice.attr('required', 'true');
-                wholesaleQuantity.attr('required', 'true');
-                return false;
-            }
-            content.addClass('d-none');
-            wholesale.attr('value', '0');
-            wholesalePrice.removeAttr('required');
-            wholesaleQuantity.removeAttr('required');
-            wholesalePrice.val(null);
-            wholesaleQuantity.val(null);
-        }
-    </script>
     @endsection

@@ -26,7 +26,7 @@ class ProviderRequest extends FormRequest
         return [
             'name' => 'required',
             'contact' => 'required',
-            'phone' => 'required|numeric',
+            'phone' => 'required|string',
             'address' => 'required',
             'status' => 'required'
         ];

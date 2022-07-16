@@ -18,7 +18,7 @@ class UserController extends Controller
             'name' => $request->name,
             'lastname' => $request->lastname,
             'username' => $request->username,
-            'role_id' => $request->role_id,
+            'role_id' => ($request->role_id) ? $request->role_id : 3 ,
             'email' => $request->email,
             'password' => bcrypt($request->password),
         ]);

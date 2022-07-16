@@ -13,9 +13,9 @@ class HomeController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-     
+
     public function __invoke()
     {
-        return view('welcome');
+        return view('home.index');
     }
 }

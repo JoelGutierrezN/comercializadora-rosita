@@ -65,30 +65,6 @@
 
                     <hr>
 
-                    <div class="form-switch my-2">
-                        <input class="form-check-input py-2" type="checkbox" role="switch" id="wholesale" name="wholesale">
-                        <label class="form-check-label" for="wholesale">Venta a Mayoreo</label>
-                    </div>
-                    <div class="isChecked d-none" id="wholesale-price-show">
-                        <h6 class="text-center py-2 fw-bold text-white rounded-pill bg-dark fs-6">Datos de Mayoreo</h6>
-                        <div class="row">
-                            <div class="col-12 col-xl-6">
-                                <div class="input-group mb-3">
-                                    <span class="input-group-text">$</span>
-                                    <input  type="text" class="form-control ps-4" id="wholesale_price" name="wholesale_price" placeholder="Precio de mayoreo" value="{{ old('wholesale_price') }}">
-                                </div>
-                            </div>
-                            <div class="col-12 col-xl-6">
-                                <div class="input-group mb-3">
-                                    <input  type="text" class="form-control ps-4" id="wholesale_quantity" name="wholesale_quantity" placeholder="A partir de..." value="{{ old('wholesale_quantity') }}">
-                                    <span class="input-group-text">Pz.</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <hr>
-
                     <div class="form-group my-2">
                         <button class="btn btn-dark btn-sm">
                             Crear Producto
@@ -102,7 +78,7 @@
 
 
 @section('script')
-   
+
     <script>
          document.addEventListener('DOMContentLoaded', (event) => {
             document.getElementById("precio").addEventListener('keypress', (e) => {
@@ -114,7 +90,7 @@
 
             })
 
-            
+
         },false);
 
 

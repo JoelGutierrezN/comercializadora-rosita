@@ -31,15 +31,6 @@
                                 </div>
 
                                 <div class="col-6 col-md-3">
-                                    <div class="card bg-primary text-center p-3 text-white fw-bold">
-                                        <p class="mb-1">
-                                            A Mayoreo
-                                        </p>
-                                        {{ $wholesale_products->count() }}
-                                    </div>
-                                </div>
-
-                                <div class="col-6 col-md-3">
                                     <div class="card bg-success text-center p-3 text-white fw-bold">
                                         <p class="mb-1">
                                             Activos
@@ -100,19 +91,6 @@
                                                                     ${{ $product->price }}
                                                                 </p>
                                                             </div>
-                                                            @if ($product->wholesale)
-                                                                <div class="col-lg-4">
-                                                                    <p class="fw-bold m-0">Mayoreo</p>
-                                                                    <p class="text-center m-0">
-                                                                        ${{ $product->wholesale_price }}/{{ $product->wholesale_quantity }}
-                                                                    </p>
-                                                                </div>
-                                                            @else
-                                                                <div class="col-lg-4">
-                                                                    <p class="text-danger fw-bold text-center">Sin Mayoreo
-                                                                    </p>
-                                                                </div>
-                                                            @endif
                                                         </div>
                                                     </div>
                                                 </div>
@@ -185,28 +163,6 @@
                                                                                 Tienda</span>
                                                                             <span
                                                                                 class="fw-bold">${{ $product->price }}</span>
-                                                                    </div>
-                                                                </div>
-                                                                <hr class="fw-bold text-dark">
-                                                                <div class="row">
-                                                                    <h6 class="d-block w-100 bg-dark text-white p-2">Mayoreo
-                                                                    </h6>
-                                                                    <div class="col-12 m-auto fs-5">
-                                                                        @if ($product->wholesale)
-                                                                            <p class="text-center">
-                                                                                A partir de <span
-                                                                                    class="text-primary fw-bold">
-                                                                                    {{ $product->wholesale_quantity }}
-                                                                                </span>unidades
-                                                                            </p>
-                                                                            <p class="text-center">
-                                                                                Precio a mayoreo de <span
-                                                                                    class="text-primary fw-bold">${{ $product->wholesale_price }}</span>
-                                                                            </p>
-                                                                        @else
-                                                                            <p class="text-danger">Este producto no tiene
-                                                                                disponibilidad de venta a mayoreo</p>
-                                                                        @endif
                                                                     </div>
                                                                 </div>
                                                             </div>

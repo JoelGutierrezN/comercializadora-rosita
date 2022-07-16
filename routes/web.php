@@ -23,6 +23,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/login', [AuthController::class, 'login'])->name('login');
+Route::post('register', [UserController::class, 'store'])->name('register');
+Route::view('registrar', 'register')->name('registrar');
 Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 Route::post('/authentication', [AuthController::class, 'authentication'])->name('authentication');
 Route::get('/', HomeController::class)->name('welcome')->middleware('guest');
@@ -57,7 +59,7 @@ Route::put('store/update/{store}', [StoreController::class, 'update'])->name('st
 //Reports
 Route::get('sale/report/{sale}', [SaleController::class, 'saleReport'])->name('sale.report')->middleware('auth');
 
-//get product by code 
+//get product by code
 Route::get('/sale/getProduct/{code}', [SaleController::class, 'getProductByCode'])->name('sale.getProduct')->middleware('auth');
 Route::post('/sale/save-sale', [SaleController::class, 'createNewSale'])->name('sale.createNewSale')->middleware('auth');
 Route::post('/sale/delete-product', [SaleController::class, 'deleteProduct'])->name('sale.deleteProduct')->middleware('auth');
