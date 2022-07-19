@@ -8,7 +8,7 @@ use App\Models\Store;
 use App\Models\Client;
 use App\Models\Product;
 use App\Models\Provider;
-
+use Illuminate\Support\Facades\Storage;
 
 class SystemController extends Controller
 {
@@ -23,6 +23,4 @@ class SystemController extends Controller
 
         return view('index', compact('users','providers','products','clients', 'stores', 'users', 'roles'));
     }
-
-
 }

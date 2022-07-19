@@ -27,8 +27,10 @@ Route::post('register', [UserController::class, 'store'])->name('register');
 Route::view('registrar', 'register')->name('registrar');
 Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 Route::post('/authentication', [AuthController::class, 'authentication'])->name('authentication');
-Route::get('/', HomeController::class)->name('welcome')->middleware('guest');
 Route::get('/home', [SystemController::class, 'index'])->name('home')->middleware('auth');
+
+Route::get('/', HomeController::class)->name('welcome')->middleware('guest');
+Route::view('/about', 'home.about')->name('about');
 
 //Products
 Route::resource('products', ProductController::class)->middleware('auth');

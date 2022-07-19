@@ -7,7 +7,8 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav m-auto mb-2 mb-lg-0 text-center fs-5">
                     <a class="nav-link" href="{{ route('home') }}">Inicio</a>
-                    <a class="nav-link" href="{{ route('store') }}">Tienda</a>
+                    <a class="nav-link" href="{{ route('clients.index') }}">Clientes</a>
+                    <a class="nav-link" href="{{ route('store') }}">Ventas</a>
                     <a class="navbar-brand me-0" href="{{ route('home') }}">
                         <img src="{{ asset('img/imagotipo.png')}}" alt="joduma-imagotipo" width="60px">
                     </a>

@@ -56,13 +56,7 @@
                                         <div class="row justify-content-between align-items-center">
 
                                             <div class="col-lg-2 col-xl-1 col-2 col-md-2">
-                                                @if ($product->photo)
-                                                    <img src="{{ $product->get_photo }}" alt="{{ $product->code }}"
-                                                        class="w-100 rounded-circle">
-                                                @else
-                                                    <img src="{{ asset('img/product/product.png') }}" alt="product-image"
-                                                        class="w-100 rounded-circle">
-                                                @endif
+                                                <img src="{{ $product->get_photo }}" width="75px" alt="{{ $product->name }}">
                                             </div>
                                             <div class="col-lg-12 col-xl-8 col-12 text-center">
                                                 <div class="row">

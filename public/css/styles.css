@@ -78,6 +78,14 @@ footer ul li p{
     background-color: var(--primary);
 }
 
+.bg-secundario{
+    background-color: var(--secondary);
+}
+
+.bg-cuaternario{
+    background-color: var(--cuarternary);
+}
+
 .text-primario{
     color: var(--primary);
 }
@@ -86,8 +94,16 @@ footer ul li p{
     color: var(--terciary);
 }
 
+.text-cuaternario{
+    color: var(--cuarternary);
+}
+
 .border-terciario{
     border-color: var(--terciary)!important;
+}
+
+.bg-overlay{
+    background-color: rgba(51, 51, 51, 0.6);
 }
 
 .font-rubik{

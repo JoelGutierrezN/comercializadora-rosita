@@ -7,6 +7,13 @@ use App\Models\Client;
 
 class ClientController extends Controller
 {
+
+    public function index(){
+        $clients = Client::latest()->paginate(10);
+
+        return view('clients.index', compact('clients'));
+    }
+
     public function store(ClientRequest $request)
     {
         $client = new Client($request->all());

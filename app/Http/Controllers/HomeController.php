@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -16,6 +17,8 @@ class HomeController extends Controller
 
     public function __invoke()
     {
-        return view('home.index');
+        $offers = Product::latest()->take(6)->get();
+        $products = Product::latest()->paginate(19);
+        return view('home.index', compact('offers', 'products'));
     }
 }

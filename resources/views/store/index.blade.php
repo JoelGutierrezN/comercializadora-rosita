@@ -6,31 +6,6 @@
 
     <div class="container-fluid h-100">
         <div class="row h-100 justify-content-around">
-            <div class="col-11 col-lg-3 bg-white rounded shadow-lg my-5 p-1 vh-75">
-                <div class="row justify-content-center mb-3">
-                    <div class="col-11 col-sm-8 col-md-12 col-xxl-5 my-2">
-                        <h6 class="text-center fw-bold fs-4">Clientes</h6>
-                    </div>
-                    <div class="col-11 col-sm-4 col-md-10 col-xxl-6 my-2 text-center">
-                        <button class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#createClient">
-                            <i class="bi bi-person-plus-fill"></i>
-                            Nuevo Cliente
-                        </button>
-                        @include('clients.partials.form')
-                    </div>
-                </div>
-                <hr>
-                <div class="container pb-4">
-                    <div class="list-group text-center">
-                        @foreach($clients as $client)
-                        <button type="button" class="list-group-item list-group-item-action" data-bs-toggle="offcanvas" href="#clientDetail{{ $client->id }}">
-                            {{ $client->name . ' ' . $client->lastname }}
-                        </button>
-                        @include('store.partials.user-detail')
-                        @endforeach
-                    </div>
-                </div>
-            </div>
             <div class="col-11 col-lg-8 bg-white rounded shadow-lg my-5 p-1 p-lg-5">
                 <div class="row align-items-center justify-content-center mb-3">
                     <div class="col-11 col-md-4 col-xl-4 my-2">
