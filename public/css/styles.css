@@ -82,12 +82,20 @@ footer ul li p{
     background-color: var(--secondary);
 }
 
+.bg-terciario{
+    background-color: var(--terciary);
+}
+
 .bg-cuaternario{
     background-color: var(--cuarternary);
 }
 
 .text-primario{
     color: var(--primary);
+}
+
+.text-secundario{
+    color: var(--secondary);
 }
 
 .text-terciario{
@@ -203,6 +211,16 @@ footer ul li p{
     position: absolute;
     bottom: 0;
     right: 0;
+}
+
+.btn-terciario{
+    background-color: var(--terciary);
+    color: var(--secondary);
+}
+
+.btn-terciario:hover{
+    background-color: var(--primary);
+    columns: var(--terciary);
 }
 
 @media (max-width: 980px) {

@@ -50,7 +50,10 @@
                                     {!! $errors->first('confirm-password', '<small class="text-danger" >:message</small>') !!}
                                 </div>
 
-                                <button type="submit" class="btn btn-info w-100">Registrar Ahora</button>
+                                <button type="submit" class="btn btn-info w-100 my-3">Registrar Ahora</button>
+
+                                <a href="{{ route('welcome') }}" class="d-block text-end text-dark">Regresar...</a>
+
                             </form>
                         </div>
                 </div>

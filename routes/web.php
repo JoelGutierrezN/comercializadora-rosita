@@ -29,6 +29,13 @@ Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 Route::post('/authentication', [AuthController::class, 'authentication'])->name('authentication');
 Route::get('/home', [SystemController::class, 'index'])->name('home')->middleware('auth');
 
+// Reset Password Routes
+Route::view('/forgot-password', 'auth.forgot-password')->middleware('guest')->name('password.request');
+Route::post('/forgot-password', [AuthController::class, 'sendResetPasswordMail'])->middleware('guest')->name('password.email');
+Route::get('/reset-password/{token}', [AuthController::class, 'resetPassword'])->middleware('guest')->name('password.reset');
+Route::post('/reset-password', [AuthController::class, 'resetingPassword'])->middleware('guest')->name('password.update');
+
+
 Route::get('/', HomeController::class)->name('welcome')->middleware('guest');
 Route::view('/about', 'home.about')->name('about');
 

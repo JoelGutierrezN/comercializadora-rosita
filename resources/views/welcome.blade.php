@@ -10,6 +10,7 @@
                         <h1 class="text-center">Iniciar Sesion</h1>
                         <hr class="text-info">
                         <div class="row align-items-center">
+                            @include('alerts.info');
                             <form method="post" action="{{ route('authentication') }}" class="border-sm p-lg-5 p-sm-3 h-sm-100">
                             @csrf
                                 <div class="form-group">
@@ -23,10 +24,15 @@
                                     <input type="password" class="form-control" name="password"><br>
                                     {!! $errors->first('password', '<small class="text-danger" >:message</small>') !!}
                                 </div>
+                                <a href="{{ route('password.request') }}" class="my-3">¿Olvidaste tu contraseña?</a>
+
                                 <div class="form-group">
                                     <div class="g-recaptcha" data-sitekey="6Lc4OgkgAAAAAB_rKDq7zRMGtdjhjbkL_sF0SNiS"></div>
                                 </div>
-                                <button type="submit" class="btn btn-info w-100">Iniciar Sesión</button>
+
+                                <button type="submit" class="btn btn-info w-100 my-3">Iniciar Sesión</button>
+
+                                <a href="{{ route('welcome') }}" class="d-block text-end text-dark">Regresar...</a>
                             </form>
                         </div>
                 </div>
