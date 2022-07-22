@@ -11,17 +11,6 @@ use App\Http\Controllers\SaleController;
 use App\Http\Controllers\StoreController;
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-
 Route::get('/login', [AuthController::class, 'login'])->name('login');
 Route::post('register', [UserController::class, 'store'])->name('register');
 Route::view('registrar', 'register')->name('registrar');
@@ -34,6 +23,9 @@ Route::view('/forgot-password', 'auth.forgot-password')->middleware('guest')->na
 Route::post('/forgot-password', [AuthController::class, 'sendResetPasswordMail'])->middleware('guest')->name('password.email');
 Route::get('/reset-password/{token}', [AuthController::class, 'resetPassword'])->middleware('guest')->name('password.reset');
 Route::post('/reset-password', [AuthController::class, 'resetingPassword'])->middleware('guest')->name('password.update');
+
+//export Excel
+Route::get('products/export', [ProductController::class, 'export'])->name('products.export')->middleware('auth');
 
 
 Route::get('/', HomeController::class)->name('welcome')->middleware('guest');

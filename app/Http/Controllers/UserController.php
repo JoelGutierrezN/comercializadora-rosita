@@ -9,6 +9,8 @@ use App\Http\Requests\Users\UserRequest;
 use App\Http\Requests\Users\UserEditRequest;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use App\Exports\UsersExport;
+use Maatwebsite\Excel\Facades\Excel;
 
 class UserController extends Controller
 {
@@ -53,5 +55,10 @@ class UserController extends Controller
     {
         $user->delete();
         return redirect()->route('home')->with('success', 'El usuario se elimino con exito');
+    }
+
+    public function export()
+    {
+        return Excel::download(new UsersExport, 'users.xlsx');
     }
 }

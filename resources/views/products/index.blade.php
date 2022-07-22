@@ -19,6 +19,11 @@
                                     @include('products.partials.form', [
                                         'providers' => $providers,
                                     ])
+                                    @auth
+                                        @if (Auth::user()->role_id === 1)
+                                            <a href="{{ route('products.export') }}" class="btn btn-success">Exportar a Excel</a>
+                                        @endif
+                                    @endauth
                                 </div>
 
                                 <div class="col-6 col-md-3">

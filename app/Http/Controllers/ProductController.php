@@ -7,6 +7,8 @@ use App\Models\Provider;
 use App\Http\Requests\ProductRequest;
 use App\Http\Requests\ProductEditRequest;
 use Illuminate\Support\Facades\Storage;
+use App\Exports\ProductsExport;
+use Maatwebsite\Excel\Facades\Excel;
 
 class ProductController extends Controller
 {
@@ -57,7 +59,7 @@ class ProductController extends Controller
 
     public function update(ProductEditRequest $request, Product $product)
     {
-       
+
         if ($request->hasFile('photo')) {
             Storage::disk('public')->delete($product->photo);
             $product->photo = $request->file('photo')->store('products', 'public');
@@ -75,5 +77,10 @@ class ProductController extends Controller
         }
         $product->delete();
         return back()->with('success', 'El producto se elimino con exito');
+    }
+
+    public function export()
+    {
+        return Excel::download(new ProductsExport, 'productos.xlsx');
     }
 }

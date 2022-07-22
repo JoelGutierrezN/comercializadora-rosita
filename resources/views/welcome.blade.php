@@ -10,7 +10,7 @@
                         <h1 class="text-center">Iniciar Sesion</h1>
                         <hr class="text-info">
                         <div class="row align-items-center">
-                            @include('alerts.info');
+                            @include('alerts.info')
                             <form method="post" action="{{ route('authentication') }}" class="border-sm p-lg-5 p-sm-3 h-sm-100">
                             @csrf
                                 <div class="form-group">
