@@ -18,13 +18,16 @@ class Product extends Model
         'provider_id',
         'price',
         'provider_price',
-        'wholesale',
         'stock',
-        'wholesale_price',
-        'wholesale_quantity',
         'photo',
         'status',
         'user_id'
+    ];
+
+    protected $attributes = [
+        'stock' => 1,
+        'status' => 1,
+        'photo' => null
     ];
 
     public function provider()
