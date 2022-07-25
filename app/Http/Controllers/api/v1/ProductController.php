@@ -7,6 +7,7 @@ use App\Http\Requests\ProductEditRequest;
 use App\Http\Requests\ProductRequest;
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class ProductController extends Controller
 {
@@ -71,5 +72,14 @@ class ProductController extends Controller
         $product->delete();
 
         return response()->json([], 204);
+    }
+
+    public function getImage($image){
+        if(Storage::disk('public')->exists("products/$image")){
+            $file = Storage::disk('public')->get("products/$image");
+            return response($file, 200);
+        }
+
+        return response(null, 204);
     }
 }
