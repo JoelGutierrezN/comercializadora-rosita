@@ -57,10 +57,10 @@
                             </form>
                         </div>
                 </div>
-                <div class="col-lg-6 bg-login" id="slogan">
+                <div class="col-lg-6" id="slogan">
                     <div class="container w-100 h-100 row align-items-center m-auto">
                         <div class="row justify-content-center">
-                            <img src="{{ asset('./img/imagotipo.png')}}" alt="joduma_logotipo" class="img-login">
+                            <img src="{{ asset('img/logo-sly.png')}}" alt="sly-logo" class="img-login">
                         </div>
                     </div>
                 </div>

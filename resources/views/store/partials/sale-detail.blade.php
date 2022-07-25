@@ -58,17 +58,6 @@
                         Ver Venta
                     </a>
                 @endif
-
-                @if ($sale->status != '1' && (Auth::user()->role_id === 1))
-                <form action="{{ route('sales.destroy', $sale) }}" method="POST">
-                    @csrf
-                    @method('DELETE')
-                    <button class="btn btn-danger btn-sm my-2" title="ticket">
-                        <i class="bi bi-filetype-pdf"></i>
-                        Eliminar Venta
-                    </button>
-                </form>
-                @endif
             </div>
 
             <div class="col-12">

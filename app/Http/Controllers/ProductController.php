@@ -15,7 +15,7 @@ class ProductController extends Controller
 
     public function index()
     {
-        $providers = Provider::orderBy('id', 'desc')->get();
+        $providers = Provider::orderBy('id', 'desc')->where('status', '1')->get();
 
         if ($providers->count() == 0) {
             return redirect()->route('providers.index')->with('error', 'Primero debes crear un proveedor');

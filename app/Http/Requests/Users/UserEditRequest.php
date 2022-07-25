@@ -29,7 +29,11 @@ class UserEditRequest extends FormRequest
             'lastname' => 'required',
             'username' => ["required", Rule::unique('users','username')->withoutTrashed()->ignore($this->user)],
             'role_id' => 'required',
-            'email' => 'required|email',
+            'email' => [
+                'required',
+                'email',
+                Rule::unique('users')->ignore($this->user()->id, 'id')
+            ],
         ];
     }
 }

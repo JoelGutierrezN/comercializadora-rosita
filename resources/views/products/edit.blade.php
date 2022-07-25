@@ -7,11 +7,7 @@
         <h2 class="text-center">Editar Producto</h2>
         <div class="row justify-content-center">
             <div class="col-4 my-3">
-                @if($product->photo)
-                    <img src="{{ Storage::url($product->photo) }}" alt="{{ $product->code }}" class="img-fluid mx-auto rounded d-block" width="150px">
-                @else
-                    <img src="{{ asset('img/product/product.png') }}" alt="product-image" class="img-fluid mx-auto rounded d-block" width="150px">
-                @endif
+                <img src="{{ $product->get_photo }}" width="75px" alt="{{ $product->name }}">
             </div>
         </div>
         <section class="col-11 col-lg-6 col-xl-5">

@@ -9,9 +9,6 @@
                     <a class="nav-link" href="{{ route('home') }}">Inicio</a>
                     <a class="nav-link" href="{{ route('clients.index') }}">Clientes</a>
                     <a class="nav-link" href="{{ route('store') }}">Ventas</a>
-                    <a class="navbar-brand me-0" href="{{ route('home') }}">
-                        <img src="{{ asset('img/imagotipo.png')}}" alt="joduma-imagotipo" width="60px">
-                    </a>
                     @if(Auth::check())
                         @if(Auth::user()->role_id === 1 || Auth::user()->role_id === 2)
                         <a class="nav-link" href="{{ route('providers.index') }}">Proveedor</a>

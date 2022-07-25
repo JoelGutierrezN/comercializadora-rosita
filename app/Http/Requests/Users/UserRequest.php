@@ -28,7 +28,7 @@ class UserRequest extends FormRequest
             'name' => 'required',
             'lastname' => 'required',
             'username' => ['required', Rule::unique('users','username')->withoutTrashed()],
-            'email' => 'required|email',
+            'email' => 'required|email|unique:users,email',
             'password' => 'required',
         ];
     }
