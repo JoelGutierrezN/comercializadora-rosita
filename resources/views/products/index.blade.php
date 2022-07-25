@@ -125,15 +125,7 @@
                                                                 class="offcanvas-body text-center border-2 border-dark border-top">
                                                                 <div class="row">
                                                                     <div class="col-8 m-auto">
-                                                                        @if ($product->photo)
-                                                                            <img src="{{ Storage::url($product->photo) }}"
-                                                                                alt="{{ $product->code }}"
-                                                                                class="w-25 border-rounded">
-                                                                        @else
-                                                                            <img src="{{ asset('img/product/product.png') }}"
-                                                                                alt="product-image"
-                                                                                class="w-25 border-rounded">
-                                                                        @endif
+                                                                        <img src="{{ $product->get_photo }}" width="75px" alt="{{ $product->name }}">
                                                                     </div>
                                                                 </div>
                                                                 <div class="row">
