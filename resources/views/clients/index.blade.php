@@ -31,7 +31,7 @@
     <div class="container-fluid pt-md-2 p-md-5 pb-md-0 p-sm-2">
         <div class="row justify-content-center mb-3">
             @forelse ($clients as $client)
-                <div class="col-lg-4 col-xl-2 col-sm-5 col-md-6 m-2 shadow p-5 text-center provider bg-light rounded">
+                <div class="col-lg-4 col-xl-3 col-sm-5 col-md-6 m-2 shadow p-5 text-center provider bg-light rounded">
                     <div class="btn-delete-container">
                         <form action="{{ route('clients.destroy', $client) }}" method="post" title="Eliminar">
                             @csrf

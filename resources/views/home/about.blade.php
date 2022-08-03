@@ -10,34 +10,18 @@
                     class="text-center border-start border-end border-5 border-terciario text-terciario w-50 mx-auto p-2 rounded font-rubik">
                     Nosotros</h3>
                 <div class="container mx-auto">
-                    <p class="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum non sunt
-                        eligendi placeat repellat
-                        quas voluptate ex ea, ipsam temporibus quibusdam blanditiis recusandae obcaecati. Porro fuga nam
-                        vero odio eveniet.Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum non sunt
-                        eligendi placeat repellat
-                        quas voluptate ex ea, ipsam temporibus quibusdam blanditiis recusandae obcaecati. Porro fuga nam
-                        vero odio eveniet.Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum non sunt
-                        eligendi placeat repellat
-                        quas voluptate ex ea, ipsam temporibus quibusdam blanditiis recusandae obcaecati. Porro fuga nam
-                        vero odio eveniet.Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum non sunt
-                        eligendi placeat repellat
-                        quas voluptate ex ea, ipsam temporibus quibusdam blanditiis recusandae obcaecati. Porro fuga nam
-                        vero odio eveniet.Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum non sunt
-                        eligendi placeat repellat
-                        quas voluptate ex ea, ipsam temporibus quibusdam blanditiis recusandae obcaecati. Porro fuga nam
-                        vero odio eveniet.Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum non sunt
-                        eligendi placeat repellat
-                        quas voluptate ex ea, ipsam temporibus quibusdam blanditiis recusandae obcaecati. Porro fuga nam
-                        vero odio eveniet.</p>
+                    <p class="text-center">Estamos dedicados a la venta de ropa . Buscamos superar las expectativas de nuestros visitantes; brindándoles servicios de alta calidad, con personal capacitado y competente  nos hemos consolidado como una Boutique única en su tipo.
+                        Contando con una amplia variedad de modelos  especiales.
+                        Contamos con venta de ropa lo que requieras para vestir ese momento memorable.</p>
                 </div>
             </div>
         </div>
     </div>
 
     <div class="container mx-auto">
-        <div class="row justify-content-around align-items-center">
+        <div class="row justify-content-evenly align-items-center">
             <div class="col-12 col-md-6 col-xl-3">
-                <div class="card mx-auto m-3 p-3">
+                <div class="card mx-auto m-3 p-3 shadow">
                     <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill="currentColor"
                         class="bi bi-lock-fill d-block mx-auto mb-3 text-info" viewBox="0 0 16 16">
                         <path
@@ -54,7 +38,7 @@
                 </div>
             </div>
             <div class="col-12 col-md-6 col-xl-3 m-3">
-                <div class="card mx-auto m-3 p-3">
+                <div class="card mx-auto m-3 p-3 shadow-lg">
                     <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill="currentColor"
                         class="bi bi-star-fill d-block mx-auto mb-3 text-info" viewBox="0 0 16 16">
                         <path
@@ -71,7 +55,7 @@
                 </div>
             </div>
             <div class="col-12 col-md-6 col-xl-3 m-3 mb-5">
-                <div class="card mx-auto m-3 p-3">
+                <div class="card mx-auto m-3 p-3 shadow">
                     <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill="currentColor"
                         class="bi bi-fast-forward-btn-fill mx-auto mb-3 text-info" viewBox="0 0 16 16">
                         <path
@@ -93,10 +77,8 @@
     <div class="container mb-5 pb-5 mx-auto">
         <div class="row align-items-center justify-content-around overflow-hidden">
             <div class="col-12 col-md-8 p-3">
-                <h6 class="text-center fs-2 fw-bold p-3">Ubicación</h6>
-                <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3764.660611151881!2d-99.47962168470296!3d19.34052804862907!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d20a14878a64eb%3A0x65bdb503fdce37bc!2sUniversidad%20Tecnol%C3%B3gica%20del%20Valle%20de%20Toluca!5e0!3m2!1ses-419!2smx!4v1657952310185!5m2!1ses-419!2smx"
-                    allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <h6 class="text-center border-start border-end border-5 border-terciario text-terciario w-50 mx-auto p-2 rounded font-rubik mb-4">Ubicación</h6>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3767.0517451034275!2d-99.5571724!3d19.236576499999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85cd8be66e7c780f%3A0xfe673aecfc2d1ef0!2sForesta%20Dream%20Lagoons!5e0!3m2!1ses-419!2smx!4v1659545366530!5m2!1ses-419!2smx" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </div>
         <hr>
