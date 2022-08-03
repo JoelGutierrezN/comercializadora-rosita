@@ -78,7 +78,7 @@
         <div class="row align-items-center justify-content-around overflow-hidden">
             <div class="col-12 col-md-8 p-3">
                 <h6 class="text-center border-start border-end border-5 border-terciario text-terciario w-50 mx-auto p-2 rounded font-rubik mb-4">Ubicación</h6>
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3767.0517451034275!2d-99.5571724!3d19.236576499999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85cd8be66e7c780f%3A0xfe673aecfc2d1ef0!2sForesta%20Dream%20Lagoons!5e0!3m2!1ses-419!2smx!4v1659545366530!5m2!1ses-419!2smx" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3767.0517451034275!2d-99.5571724!3d19.236576499999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85cd8be66e7c780f%3A0xfe673aecfc2d1ef0!2sForesta%20Dream%20Lagoons!5e0!3m2!1ses-419!2smx!4v1659545366530!5m2!1ses-419!2smx" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" id="map"></iframe>
             </div>
         </div>
         <hr>
