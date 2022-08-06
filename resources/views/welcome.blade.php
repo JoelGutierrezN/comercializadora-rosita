@@ -11,7 +11,7 @@
                         <hr class="text-info">
                         <div class="row align-items-center">
                             @include('alerts.info')
-                            <form method="post" action="{{ route('authentication') }}" class="border-sm p-lg-5 p-sm-3 h-sm-100">
+                            <form method="post" action="{{ route('authentication') }}" class="border-sm p-lg-5 p-sm-3 h-sm-100" id="form">
                             @csrf
                                 <div class="form-group">
                                     <label class="text-center w-100 mb-lg-3">Nombre de Usuario</label>
@@ -27,10 +27,10 @@
                                 <a href="{{ route('password.request') }}" class="my-3">¿Olvidaste tu contraseña?</a>
 
                                 <div class="form-group">
-                                    <div class="g-recaptcha" data-sitekey="6Lc4OgkgAAAAAB_rKDq7zRMGtdjhjbkL_sF0SNiS"></div>
+                                    <div class="g-recaptcha" data-sitekey="6Lc4OgkgAAAAAB_rKDq7zRMGtdjhjbkL_sF0SNiS" id="captcha"></div>
                                 </div>
 
-                                <button type="submit" class="btn btn-info w-100 my-3">Iniciar Sesión</button>
+                                <button type="submit" class="btn btn-info w-100 my-3" id="btn-login">Iniciar Sesión</button>
 
                                 <a href="{{ route('welcome') }}" class="d-block text-end text-dark">Regresar...</a>
                             </form>
@@ -52,4 +52,18 @@
 
 @section('script')
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script>
+        window.addEventListener('load', ()=>{
+            var response = grecaptcha.getResponse();
+            document.getElementById("form").addEventListener("submit", function(evt){
+                var response = grecaptcha.getResponse();
+                if(response.length == 0)
+                {
+                    alert("Debes Pasar el Captcha!");
+                    evt.preventDefault();
+                    return false;
+                }
+            });
+        });
+    </script>
 @endsection

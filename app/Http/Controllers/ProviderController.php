@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
-
+use App\Exports\ProvidersExport;
 use App\Models\Provider;
 use App\Http\Controllers\Controller;
+use Maatwebsite\Excel\Facades\Excel;
 use App\Http\Requests\Providers\ProviderRequest;
 
 class ProviderController extends Controller
@@ -44,6 +45,11 @@ class ProviderController extends Controller
         $provider->delete();
 
         return back()->with('success', 'Eliminado Exitosamente');
+    }
+
+    public function export()
+    {
+        return Excel::download(new ProvidersExport, 'Proveedores.xlsx');
     }
 
 

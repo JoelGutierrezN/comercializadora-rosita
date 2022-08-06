@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers\api\v1;
 
-use App\Http\Controllers\Controller;
-use App\Http\Requests\ProductEditRequest;
-use App\Http\Requests\ProductRequest;
 use App\Models\Product;
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use App\Http\Requests\ProductRequest;
 use Illuminate\Support\Facades\Storage;
+use App\Http\Requests\ProductEditRequest;
 
 class ProductController extends Controller
 {
@@ -15,8 +16,15 @@ class ProductController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
+        if($request->provider_id){
+
+            $products = Product::latest()->where('provider_id', $request->provider_id)->get();
+
+            return response()->json($products, 200);
+        }
+
         $products = Product::latest()->where('status', '1')->get();
 
         return response()->json($products, 200);

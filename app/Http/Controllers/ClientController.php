@@ -1,9 +1,12 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Http\Controllers\Controller;
-use App\Http\Requests\Clients\ClientRequest;
+
+use App\Exports\ClientExport;
 use App\Models\Client;
+use App\Http\Controllers\Controller;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Http\Requests\Clients\ClientRequest;
 
 class ClientController extends Controller
 {
@@ -35,11 +38,8 @@ class ClientController extends Controller
         return back()->with('success', 'Eliminado con Exito');
     }
 
-
-
-
-
-
-
-
+    public function export()
+    {
+        return Excel::download(new ClientExport, 'Clientes.xlsx');
+    }
 }

@@ -4,11 +4,12 @@ namespace App\Http\Controllers;
 
 use Carbon\Carbon;
 use App\Models\Sale;
+use App\Models\Entry;
 use App\Models\Client;
 use App\Models\Product;
+use Illuminate\Support\Arr;
 use Illuminate\Http\Request;
 use App\Models\TemporatySale;
-use Illuminate\Support\Arr;
 
 class SaleController extends Controller
 {
@@ -75,6 +76,20 @@ class SaleController extends Controller
         $pricesData = $request->pricesData;
         $pricesData = json_decode($pricesData);
         $client = json_decode($request->client, true);
+        $products = json_decode($request->products);
+
+        foreach($products as $product){
+            $selledProduct = Product::find($product->product->id);
+            $selledProduct->stock -= $product->quantity;
+            $selledProduct->save();
+
+            $newEntry = new Entry();
+            $newEntry->entry = 0;
+            $newEntry->provider_id = $product->product->provider_id;
+            $newEntry->product_id = $product->product->id;
+            $newEntry->pcs = $product->quantity;
+            $newEntry->save();
+        }
 
         $sale = Sale::create([
             'user_id' => auth()->user()->id,

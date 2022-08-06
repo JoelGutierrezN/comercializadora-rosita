@@ -25,6 +25,9 @@
                         {{ $clients->total() }}
                     </p>
                 </div>
+                <div class="col-lg-1 mx-5">
+                    <a href="{{ route('clients.export') }}" class="btn btn-success ms-1" target="_blank">Exportar a Excel</a>
+                </div>
             </div>
         </div>
     </div>

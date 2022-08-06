@@ -1,15 +1,17 @@
 <?php
 
-use App\Http\Controllers\Auth\AuthController;
-use App\Http\Controllers\UserController;
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\SaleController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\EntryController;
+use App\Http\Controllers\StoreController;
+use App\Http\Controllers\ClientController;
+use App\Http\Controllers\SystemController;
+use App\Http\Controllers\EntriesController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProviderController;
-use App\Http\Controllers\SystemController;
-use App\Http\Controllers\ClientController;
-use App\Http\Controllers\SaleController;
-use App\Http\Controllers\StoreController;
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Auth\AuthController;
 
 Route::get('/login', [AuthController::class, 'login'])->name('login');
 Route::post('register', [UserController::class, 'store'])->name('register');
@@ -35,14 +37,21 @@ Route::view('/about', 'home.about')->name('about');
 Route::resource('products', ProductController::class)->middleware('auth');
 
 //Providers
-Route::resource('providers', ProviderController::class)->middleware(['auth', 'user_role']);
+Route::resource('providers', ProviderController::class)->except('show')->middleware(['auth', 'user_role']);
+Route::get('providers/export', [ProviderController::class, 'export'])->name('providers.export')->middleware('auth');
+
 
 //users
 Route::resource('users', UserController::class)->middleware('auth');
 Route::put('users/{user}/changepassword', [UserController::class, 'changePassword'])->name('users.changepassword')->middleware('auth');
 
 //Clients
-Route::resource('clients', ClientController::class)->middleware('auth');
+Route::resource('clients', ClientController::class)->except('show')->middleware('auth');
+Route::get('clients/export', [ClientController::class, 'export'])->name('clients.export')->middleware('auth');
+
+//entries
+Route::resource('entries', EntriesController::class)->except('show')->middleware('auth');
+Route::get('entries/export', [EntriesController::class, 'export'])->name('entries.export')->middleware('auth');
 
 
 //sales

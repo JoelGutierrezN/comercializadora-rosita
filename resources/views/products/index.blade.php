@@ -24,6 +24,7 @@
                                             <a href="{{ route('products.export') }}" class="btn btn-success">Exportar a Excel</a>
                                         @endif
                                     @endauth
+                                    <a href="{{ route('entries.index') }}" class="btn btn-primary">Entradas/Salidas</a>
                                 </div>
 
                                 <div class="col-6 col-md-3">

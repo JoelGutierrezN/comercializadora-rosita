@@ -23,6 +23,10 @@ class Provider extends Model
         return $this->hasMany(Product::class);
     }
 
+    public function entries(){
+        return $this->hasMany( Entry::class );
+    }
+
     public function getGetClassAttribute(){
         if($this->status){
             return 'provider-active';

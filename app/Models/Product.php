@@ -32,12 +32,16 @@ class Product extends Model
 
     public function provider()
     {
-        return $this->belongsTo(Provider::class);
+        return $this->belongsTo( Provider::class );
     }
 
     public function user()
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo( User::class );
+    }
+
+    public function entries(){
+        return $this->hasMany( Entry::class );
     }
 
     public function getGetDescriptionAttribute()
