@@ -3,10 +3,11 @@
 namespace App\Http\Controllers\api\v1;
 
 use App\Http\Controllers\Controller;
-use App\Models\Provider;
+use App\Http\Requests\Users\UserRequest;
+use App\Models\User;
 use Illuminate\Http\Request;
 
-class ProviderController extends Controller
+class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,9 +16,9 @@ class ProviderController extends Controller
      */
     public function index()
     {
-        $providers = Provider::latest()->where('status', '1')->get();
+        $users = User::latest()->get();
 
-        return response()->json($providers ,200);
+        return response()->json($users ,200);
     }
 
     /**
@@ -26,47 +27,47 @@ class ProviderController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(UserRequest $request)
     {
-        $provider = Provider::create($request->all());
+        $user = User::create($request->all());
 
-        return response()->json($provider, 201);
+        return response()->json($user, 201);
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Provider  $provider
+     * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function show(Provider $provider)
+    public function show(User $user)
     {
-        return response()->json($provider, 200);
+        return response()->json($user, 200);
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Provider  $provider
+     * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Provider $provider)
+    public function update(Request $request, User $user)
     {
-        $provider->update($request->all());
+        $user->update($request->all());
 
-        return response()->json($provider, 202);
+        return response()->json($user, 202);
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Provider  $provider
+     * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Provider $provider)
+    public function destroy(User $user)
     {
-        $provider->delete();
+        $user->delete();
 
         return response()->json([], 204);
     }

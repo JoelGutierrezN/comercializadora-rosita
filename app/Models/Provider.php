@@ -18,6 +18,10 @@ class Provider extends Model
         'status'
     ];
 
+    protected $attributes = [
+        'status' => 1
+    ];
+
     public function products()
     {
         return $this->hasMany(Product::class);
