@@ -13,6 +13,7 @@ Route::apiResource('clients', ClientController::class);
 Route::apiResource('users', UserController::class);
 
 Route::post('login', UserTokenController::class);
+Route::post('logout', [AuthController::class, 'logout']);
 
 Route::get('images/{image}', [ProductController::class, 'getImage'])->name('images.show');
 

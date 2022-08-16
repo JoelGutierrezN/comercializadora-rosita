@@ -19,7 +19,7 @@
     </div>
     @endif
     <div class="col-6 col-sm-4 col-md-6 col-lg-3">
-        <a class="nav-link" href="{{ route('store') }}">
+        <a class="nav-link" href="{{ route('clients.index') }}">
             <div class="card text-center bg-success on-hover-expand-card">
                 <div class="card-body">
                     <div>
@@ -177,7 +177,7 @@
                 <div class="card-image text-center my-3">
                     <img src="{{ asset('img/assets/user_default.png') }}" alt="user" class="img-fluid w-25">
                 </div>
-                
+
                 <div class="text-center" overflow-x: auto>
                     <div>
                         <span class="badge badge-info w-100 bg-dark p-2 mb-2">
@@ -320,7 +320,7 @@
                 passwordMessage.addClass('d-none');
             })
         });
-       
+
 
 
 
@@ -337,7 +337,7 @@
 
             })
 
-            
+
         },false);
 
 

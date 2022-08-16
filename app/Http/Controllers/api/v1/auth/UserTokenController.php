@@ -26,7 +26,8 @@ class UserTokenController extends Controller
         }
 
         return response()->json([
-            'token' => $user->createToken($request->username)->plainTextToken
+            'token' => $user->createToken($request->username)->plainTextToken,
+            'user' => $user
         ]);
     }
 }
